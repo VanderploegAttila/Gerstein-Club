@@ -8,5 +8,7 @@ def test():
 
 @app.route('/search', methods=['GET', 'POST'])
 def search():
+    error=None
+
 
     return render_template('index.html', swear='BITches and assholes')
