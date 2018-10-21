@@ -1,6 +1,6 @@
 <!DOCTYPE html>
   <head>
-    <title>WHAT'S UP BITCHES 297</title>
+    <title>{{ msg }} </title>
     <meta charset="utf-8">
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
     <script type="text/javascript" src="js/..."></script>
@@ -15,20 +15,23 @@
       <img src={{ url_for('static', filename='images/whomst.jpg') }}>
     </div>
 
-    <div id="optionsCont">
+<div id="optionsCont">
       <div id="options">
         <div id="tEmpty"></div>
-        <h2><span>Quick Search</span></h2>
-        <div id="option" class="find notLast">
-            <form action="/bathroom/" method="post">
-            <button name="bathrooms." type="submit">bathrooms.</button>
-            </form>
-           <form action="/lab/" method="post">
-            <button name="labs." type="submit">labs.</button>
-            </form>
-           <form action="/study_space/" method="post">
-            <button name="study spaces" type="submit">study spaces.</button>
-            </form>
+          <h2><span>Quick Search</span></h2>
+          <div id="option" class="find notLast">
+              <form action="/" method="post">
+                  <button name="Return to main page" type="submit">Return to main page</button>
+              </form>
+              <form action="/bathroom/" method="post">
+                  <button name="bathrooms." type="submit">bathrooms.</button>
+              </form>
+              <form action="/lab/" method="post">
+                  <button name="labs." type="submit">labs.</button>
+              </form>
+              <form action="/study_space/" method="post">
+                  <button name="study spaces" type="submit">study spaces.</button>
+              </form>
         </div>
 
         <h2><span>FILTERS</span></h2>
@@ -50,15 +53,16 @@
     </div>
 
     <div id="tEmpty"></div>
-
-
     <div id="search">
-      FIND YOUR CLASS <em>!</em>
-      <form action="/search" method="get" class="searcher">
-        <input type="text" name="q" value="" placeholder="e.g.: RS303"  class="srchTxt"/> <!-- SearchQuery tba! -->
-      </form>
+         Nearby {{ msg }}<em>:</em>
     </div>
-    <div id="canvas"></div>
+    <div id="canvas">
+        <em>
+            {% for para in lmsg %}
+            <p>{{para}}</p>
+            {% endfor %}
+        </em>
+    </div>
 
     <div id="bEmpty"></div>
 
