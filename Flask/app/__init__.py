@@ -7,7 +7,7 @@ app = Flask(__name__)
 
 @app.route('/', methods=['GET','POST'])
 def index():
-    return render_template('index.html')
+    return render_template('testindex.html')
 
 
 @app.route('/bathroom/', methods=['POST'])
