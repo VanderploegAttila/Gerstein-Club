@@ -71,22 +71,24 @@
   </div>
 <script>
 
-    function putActiveOnMap(src,width,x,y){
+    function putActiveOnMap(src,width,height,x,y){
         var elem = document.createElement("img");
         elem.setAttribute("src", src);
         elem.style.position = "absolute";
-        elem.setAttribute("width",width);
+        //elem.setAttribute("width",width);
+        //elem.setAttribute("width",height);
 
 
 
         var c = document.getElementById("canvas");
         var ctx = c.getContext("2d");
+        ctx.imageSmoothingEnabled=false;
 
 
 
 
 
-        ctx.drawImage(elem,x,y);
+        ctx.drawImage(elem,x,y,300,200);
 
 
         /*
@@ -105,7 +107,7 @@
 
     function activatEachAOM(AOM){
         for (var i=0,size=AOM.length;i<(size);i++){
-            putActiveOnMap(AOM[i].src,AOM[i].width,AOM[i].x_cord,AOM[i].y_cord)
+            putActiveOnMap(AOM[i].src,AOM[i].width,AOM[i].height,AOM[i].x_cord,AOM[i].y_cord)
 
 
         }
