@@ -84,7 +84,7 @@
         var date = new Date();
 
         elem.setAttribute("id",date.getTime());
-        elem.setAttribute("src", "frog-pic.jpg");
+        elem.setAttribute("src", "{{ url_for('static', filename='images/pic_the_scream.jpg') }}");
         elem.style.position = "absolute";
         elem.setAttribute("width",100);
         elem.style.top=placey;

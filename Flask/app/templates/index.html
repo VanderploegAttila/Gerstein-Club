@@ -57,7 +57,7 @@
         <input type="text" name="q" value="" placeholder="e.g.: RS303"  class="srchTxt"/> <!-- SearchQuery tba! -->
       </form>
     </div>
-    <div  id="canvas"></div >
+    <canvas  id="canvas"></canvas >
 
     <div id="bEmpty"></div>
 
@@ -71,15 +71,55 @@
   </div>
 <script>
 
-    function run(){
+    function putActiveOnMap(src,width,x,y){
+        var elem = document.createElement("img");
+        elem.setAttribute("src", src);
+        elem.style.position = "absolute";
+        elem.setAttribute("width",width);
 
 
-        alert("working!");
+
+        var c = document.getElementById("canvas");
+        var ctx = c.getContext("2d");
+
+
+
+
+
+        ctx.drawImage(elem,x,y);
+
+
+        /*
+        var plx= x.toString();
+        var placex=plx.concat("px");
+
+        var ply= y.toString();
+        var placey=ply.concat("px");
+
+        elem.style.top=placey;
+        elem.style.left=placex;
+        document.getElementById("canvas").appendChild(elem);
+        */
+
+    }
+
+    function activatEachAOM(AOM){
+        for (var i=0,size=AOM.length;i<(size);i++){
+            putActiveOnMap(AOM[i].src,AOM[i].width,AOM[i].x_cord,AOM[i].y_cord)
+
+
+        }
 
 
 
     }
-    run()
+
+
+
+    var AOM={{ AOM|tojson }}
+
+    activatEachAOM(AOM)
+
 </script>
 
 

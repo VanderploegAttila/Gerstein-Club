@@ -1,13 +1,19 @@
 __author__ = '潘一铖'
 
-from flask import Flask,render_template
-
+from flask import Flask,render_template, json
+from app.helper import gettestAOM
 app = Flask(__name__)
 
 
+
+@app.route('/test/', methods=['GET','POST'])
+def test():
+    return render_template('blit.html')
+
 @app.route('/', methods=['GET','POST'])
 def index():
-    return render_template('testindex.html')
+    AOM=gettestAOM()
+    return render_template('index.html',AOM=AOM)
 
 
 @app.route('/bathroom/', methods=['POST'])
