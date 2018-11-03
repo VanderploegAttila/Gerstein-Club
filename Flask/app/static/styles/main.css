@@ -262,8 +262,10 @@ span {
 #canvas {
   position: static;
   margin-left:40%;
+  /*
   width:50%;
   height:500px;
+   */
   background-color:#fff;
   border-radius:2px;
   border:1px solid #f2f2f2;

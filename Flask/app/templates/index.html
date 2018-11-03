@@ -57,7 +57,7 @@
         <input type="text" name="q" value="" placeholder="e.g.: RS303"  class="srchTxt"/> <!-- SearchQuery tba! -->
       </form>
     </div>
-    <canvas  id="canvas"></canvas >
+    <canvas  id="canvas" height="500px" width="1000px"></canvas >
 
     <div id="bEmpty"></div>
 
@@ -74,7 +74,9 @@
     function putActiveOnMap(src,width,height,x,y){
         var elem = document.createElement("img");
         elem.setAttribute("src", src);
-        elem.style.position = "absolute";
+        //elem.style.position = "absolute";
+
+
         //elem.setAttribute("width",width);
         //elem.setAttribute("width",height);
 
@@ -88,7 +90,7 @@
 
 
 
-        ctx.drawImage(elem,x,y,300,200);
+        ctx.drawImage(elem,x,y,width,height);
 
 
         /*

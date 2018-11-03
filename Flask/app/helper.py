@@ -7,10 +7,10 @@ def gettestAOM():
         'name': "backmap21",
         'src':"static/images/bigmap2.svg",
         "stack":1,
-        'width':200,
-        'height':200,
-        'x_cord':1,
-        'y_cord': 1
+        'width':1500,
+        'height':1500,
+        'x_cord':10,
+        'y_cord':10
     }
 
     #AOM.append(whomst)
