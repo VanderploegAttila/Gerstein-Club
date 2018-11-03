@@ -7,8 +7,8 @@ def gettestAOM():
         'name': "backmap21",
         'src':"static/images/bigmap2.svg",
         "stack":1,
-        'width':1500,
-        'height':1500,
+        'width':200,
+        'height':300,
         'x_cord':10,
         'y_cord':10
     }
