@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<title>smash the frogs </title>
+	<style>
+	*{padding:0; margin:0;}
+	canvas {; display: block; margin:0 auto;}
+	</style>
+</head>
+
+
+
+<body>
+<button onclick="begin()">begin</button>
+<button onclick="end()">end</button>
+
+<p id="ave"> ave </p>
+<p id="last"> last </p>
+
+<div id="images">
+
+
+
+
+
+
+</div>
+
+	<canvas id="mcstyle" width="500" height="500"> </canvas>
+
+
+
+
+<script>
+        var gogogo =0;
+        var sum=0;
+        var responses= new Array();
+        var ave;
+        var last;
+        var text;
+        function begin(){
+        gogogo=1;
+        alert("starting, Smash those frogs!!");
+        }
+
+        function end(){
+        gogogo=0;
+        alert("ending the code, restart page to try again")
+
+
+
+        }
+    function run(){
+    var spawn =Math.random();
+        if (gogogo===1){
+
+             if (spawn >0.5){
+                var x=Math.random()*500+100;
+                var y=Math.random()*500+100;
+                addimage(x,y);
+
+
+        }
+
+
+        }
+    document.getElementById("last").innerHTML ="last"+ last.toString();
+    document.getElementById("ave").innerHTML = "ave"+ave.toString();
+
+
+    }
+
+
+    function addimage(x,y){
+
+        var pl= x.toString();
+        var placex=pl.concat("px");
+
+        var pl= y.toString();
+        var placey=pl.concat("px");
+
+        var elem = document.createElement("img");;
+        var date = new Date();
+
+        elem.setAttribute("id",date.getTime());
+        elem.setAttribute("src", "{{ url_for('static', filename='images/pic_the_scream.jpg') }}");
+        elem.style.position = "absolute";
+        elem.setAttribute("width",100);
+        elem.style.top=placey;
+        elem.style.left=placex;
+        elem.onclick = function(){remove(this);};
+
+
+        document.getElementById("images").appendChild(elem);
+
+
+    }
+    function remove(e){
+        var date = new Date();
+        last=date.getTime()-e.id;
+        sum=last+sum
+        ave=sum/responses.length
+        responses.push((date.getTime()-e.id ));
+        document.getElementById("images").removeChild(e);
+
+    }
+
+    setInterval(run,1000);
+
+
+
+
+</script>
+
+
+
+
+
+</body>
+
+</html>
