@@ -1,0 +1,156 @@
+--
+-- PostgreSQL database dump
+--
+
+-- Dumped from database version 11.1
+-- Dumped by pg_dump version 11.1
+
+-- Started on 2018-12-01 18:34:40
+
+SET statement_timeout = 0;
+SET lock_timeout = 0;
+SET idle_in_transaction_session_timeout = 0;
+SET client_encoding = 'UTF8';
+SET standard_conforming_strings = on;
+SELECT pg_catalog.set_config('search_path', '', false);
+SET check_function_bodies = false;
+SET client_min_messages = warning;
+SET row_security = off;
+
+--
+-- TOC entry 2806 (class 0 OID 24577)
+-- Dependencies: 196
+-- Data for Name: Locations; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY public."Locations" (location_id, name, type, building, floor, xcoor, ycoor, con1, con2, con3, con4, con5, con6, con7) FROM stdin;
+stg1U	RS Ground Stair South Up	stair	RS	Ground	181	345	eng1	sts1D	\N	\N	\N	\N	\N
+pag1	RS Ground Pathpoint 1	path	RS	Ground	132	254	eng1	pag2	\N	\N	\N	\N	\N
+eng1	RS Main Entrance	entrance	RS	Ground	132	350	sg1	pag1	\N	\N	\N	\N	\N
+elg1	RS Ground Elevator	elevator	RS	Ground	134	196	pag2	els1	elt1	elf1	\N	\N	\N
+wag2	RS Ground Women's Bathroom	bathroom	RS	Ground	181	262	pag2	\N	\N	\N	\N	\N	\N
+wag1	RS Ground Men's Bathroom	bathroom	RS	Ground	155	262	pag2	\N	\N	\N	\N	\N	\N
+rs119	RS119	room	RS	Ground	191	165	pag2	\N	\N	\N	\N	\N	\N
+eng2	RS Emergency Exit	entrance	RS	Ground	142	145	pag2	\N	\N	\N	\N	\N	\N
+pag2	RS Ground Pathpoint 2	path	RS	Ground	157	237	pag3	wag1	wag2	elg1	eng2	pag1	rs119
+pag3	RS Ground Pathpoint 3	path	RS	Ground	220	245	pag4	pag2	rs116	rs103	\N	\N	\N
+rs103	RS103	room	RS	Ground	236	262	pag3	\N	\N	\N	\N	\N	\N
+rs116	RS116	room	RS	Ground	213	226	pag3	\N	\N	\N	\N	\N	\N
+rs107	RS107	room	RS	Ground	743	260	pag7	\N	\N	\N	\N	\N	\N
+pag7	RS Ground Pathpoint 7	path	RS	Ground	779	244	pag6	pag8	rs107	rs108	\N	\N	\N
+rs105	RS105	room	RS	Ground	522	260	pag6	\N	\N	\N	\N	\N	\N
+rs112	RS112	room	RS	Ground	522	226	pag6	\N	\N	\N	\N	\N	\N
+rs113	RS113	room	RS	Ground	473	226	pag6	\N	\N	\N	\N	\N	\N
+pag6	RS Ground Pathpoint 6	path	RS	Ground	498	244	pag5	pag7	rs113	rs112	rs105	\N	\N
+rs104	RS104	room	RS	Ground	355	262	pag5	\N	\N	\N	\N	\N	\N
+rs114	RS114	room	RS	Ground	403	226	pag5	\N	\N	\N	\N	\N	\N
+pag5	RS Ground Pathpoint 5	path	RS	Ground	376	244	pag4	pag6	rs114	rs104	\N	\N	\N
+rs115	RS115	room	RS	Ground	294	227	pag4	\N	\N	\N	\N	\N	\N
+pag4	RS Ground Pathpoint 4	path	RS	Ground	291	244	pag3	pag5	rs115	\N	\N	\N	\N
+stg2U	RS Ground Stair North Up	stair	RS	Ground	851	210	pag8	sts2D	\N	\N	\N	\N	\N
+eng3	RS North Entrance	entrance	RS	Ground	901	238	pag8	\N	\N	\N	\N	\N	\N
+pag8	RS Ground Pathpoint 8	path	RS	Ground	851	244	pag7	eng3	stg2	\N	\N	\N	\N
+rs108	RS108	room	RS	Ground	804	260	pag7	\N	\N	\N	\N	\N	\N
+pas3	RS Second Pathpoint 3	path	RS	2	183	224	pas2	pas4	pas5	rs203	\N	\N	\N
+was1	RS Second Men's Bathroom	bathroom	RS	2	156	248	pas1	\N	\N	\N	\N	\N	\N
+sts1U	RS Second Stair South Up	stair	RS	2	130	284	pas1	stt1D	\N	\N	\N	\N	\N
+pas1	RS Second Pathpoint 1	path	RS	2	130	224	pas2	sts1U	was1	\N	\N	\N	\N
+pas2	RS Second Pathpoint 2	path	RS	2	183	224	pas1	pas3	sts1D	\N	\N	\N	\N
+sts1D	RS Second Stair South Down	stair	RS	2	183	321	stg1U	pas2	\N	\N	\N	\N	\N
+rs205	RS205	room	RS	2	373	248	pas6	\N	\N	\N	\N	\N	\N
+rs212	RS212	room	RS	2	377	202	pas6	\N	\N	\N	\N	\N	\N
+pas6	RS Second Pathpoint 6	path	RS	2	375	224	pas5	pas7	rs212	rs205	\N	\N	\N
+rs204	RS204	room	RS	2	321	248	pas5	\N	\N	\N	\N	\N	\N
+rs214d	RS214D	room	RS	2	330	202	pas5	\N	\N	\N	\N	\N	\N
+pas5	RS Second Pathpoint 5	path	RS	2	326	224	pas3	pas6	rs214d	rs204	\N	\N	\N
+rs214	RS214	room	RS	2	238	187	pas4	\N	\N	\N	\N	\N	\N
+els1	RS Second Elevator	elevator	RS	2	133	178	pas4	elg1	elt1	elf1	\N	\N	\N
+pas4	RS Second Pathpoint 4	path	RS	2	218	179	pas3	rs214	els1	\N	\N	\N	\N
+rs203	RS203	room	RS	2	222	248	pas3	\N	\N	\N	\N	\N	\N
+rs206	RS206	room	RS	2	416	248	pas7	\N	\N	\N	\N	\N	\N
+pas7	RS Second Pathpoint 7	path	RS	2	417	224	pas6	pas8	rs206	\N	\N	\N	\N
+sts2D	RS Second Stair North Down	stair	RS	2	872	201	pas12	stg2U	\N	\N	\N	\N	\N
+sts2U	RS Second Stair North Up	stair	RS	2	853	200	pas12	stt2D	\N	\N	\N	\N	\N
+pas12	RS Second Pathpoint 12	path	RS	2	863	227	pas11	sts2U	sts2D	\N	\N	\N	\N
+rs210	RS210	room	RS	2	812	318	pas11	\N	\N	\N	\N	\N	\N
+pas11	RS Second Pathpoint 11	path	RS	2	807	227	pas10	pas12	rs210	\N	\N	\N	\N
+rs209	RS209	room	RS	2	755	248	pas10	\N	\N	\N	\N	\N	\N
+pas10	RS Second Pathpoint 10	path	RS	2	755	227	pas9	pas11	rs209	\N	\N	\N	\N
+rs208	RS208	room	RS	2	593	248	pas9	\N	\N	\N	\N	\N	\N
+pas9	RS Second Pathpoint 9	path	RS	2	593	227	pas8	pas10	rs208	\N	\N	\N	\N
+rs207	RS207	room	RS	2	500	248	pas8	\N	\N	\N	\N	\N	\N
+rs211	RS211	room	RS	2	510	202	pas8	\N	\N	\N	\N	\N	\N
+pas8	RS Second Pathpoint 8	path	RS	2	507	226	pas7	pas9	rs211	rs207	\N	\N	\N
+stt2U	RS Third Stair North Up	stair	RS	3	840	232	pat10	stf2D	\N	\N	\N	\N	\N
+stt2D	RS Third Stair North Down	stair	RS	3	846	270	pat10	sts2U	\N	\N	\N	\N	\N
+rs311	RS311	room	RS	3	804	393	pat10	\N	\N	\N	\N	\N	\N
+pat10	RS Third Pathpoint 10	path	RS	3	805	257	pat9	rs311	stt2D	stt2U	\N	\N	\N
+rs310	RS310	room	RS	3	710	278	pat9	\N	\N	\N	\N	\N	\N
+pat9	RS Third Pathpoint 9	path	RS	3	718	257	pat8	pat10	rs310	\N	\N	\N	\N
+rs309	RS309	room	RS	3	611	278	pat8	\N	\N	\N	\N	\N	\N
+pat8	RS Third Pathpoint 8	path	RS	3	611	257	pat7	pat9	rs309	\N	\N	\N	\N
+rs308	RS308	room	RS	3	552	278	pat7	\N	\N	\N	\N	\N	\N
+pat7	RS Third Pathpoint 7	path	RS	3	554	257	pat6	pat8	rs308	\N	\N	\N	\N
+rs307	RS307	room	RS	3	445	278	pat6	\N	\N	\N	\N	\N	\N
+rs313	RS313	room	RS	3	462	233	pat6	\N	\N	\N	\N	\N	\N
+pat6	RS Third Pathpoint 6	path	RS	3	453	257	pat5	pat7	rs313	rs307	\N	\N	\N
+rs306	RS306	room	RS	3	379	278	pat5	\N	\N	\N	\N	\N	\N
+rs314	RS314	room	RS	3	379	234	pat5	\N	\N	\N	\N	\N	\N
+pat5	RS Third Pathpoint 5	path	RS	3	378	256	pat4	pat6	rs314	rs306	\N	\N	\N
+rs305	RS305	room	RS	3	336	278	pat4	\N	\N	\N	\N	\N	\N
+rs315	RS315	room	RS	3	336	234	pat4	\N	\N	\N	\N	\N	\N
+pat4	RS Third Pathpoint 4	path	RS	3	336	256	pat3	pat5	rs315	rs305	\N	\N	\N
+rs304	RS304	room	RS	3	295	278	pat3	\N	\N	\N	\N	\N	\N
+rs316	RS316	room	RS	3	295	234	pat3	\N	\N	\N	\N	\N	\N
+pat3	RS Third Pathpoint 3	path	RS	3	295	256	pat2	pat4	rs316	rs304	\N	\N	\N
+rs303	RS303	room	RS	3	231	278	pat2	\N	\N	\N	\N	\N	\N
+rs317	RS317	room	RS	3	233	234	pat2	\N	\N	\N	\N	\N	\N
+pat2	RS Third Pathpoint 2	path	RS	3	232	256	pat1	pat3	rs317	rs303	\N	\N	\N
+wat1	RS Third Women's Bathroom	bathroom	RS	3	162	278	pat1	\N	\N	\N	\N	\N	\N
+rs319	RS319	room	RS	3	152	195	pat1	\N	\N	\N	\N	\N	\N
+elt1	RS Third Elevator	elevator	RS	3	115	211	pat1	elg1	els1	elf1	\N	\N	\N
+pat1	RS Third Pathpoint 1	path	RS	3	127	256	stt1D	stt1U	elt1	rs319	pat2	wat1	\N
+stt1U	RS Third Stair South Up	stair	RS	3	115	301	pat1	stf1D	\N	\N	\N	\N	\N
+stt1D	RS Third Stair South Down	stair	RS	3	130	348	pat1	sts1U	\N	\N	\N	\N	\N
+stf2D	RS Fourth Stair North Down	stair	RS	4	850	229	paf11	stt2U	\N	\N	\N	\N	\N
+rs418	RS418	room	RS	4	822	375	paf11	\N	\N	\N	\N	\N	\N
+rs417	RS417	room	RS	4	822	335	paf11	\N	\N	\N	\N	\N	\N
+rs415	RS415	room	RS	4	822	251	paf11	\N	\N	\N	\N	\N	\N
+paf11	RS Fourth Pathpoint 11	path	RS	4	804	235	paf10	rs415	rs417	rs418	stf2D	\N	\N
+rs412	RS412	room	RS	4	731	240	paf10	\N	\N	\N	\N	\N	\N
+paf10	RS Fourth Pathpoint 10	path	RS	4	732	223	paf9	paf11	rs412	\N	\N	\N	\N
+rs411	RS411	room	RS	4	645	240	paf9	\N	\N	\N	\N	\N	\N
+paf9	RS Fourth Pathpoint 9	path	RS	4	645	223	paf8	paf10	rs411	\N	\N	\N	\N
+rs410	RS410	room	RS	4	585	240	paf8	\N	\N	\N	\N	\N	\N
+paf8	RS Fourth Pathpoint 8	path	RS	4	583	221	paf7	paf9	rs410	\N	\N	\N	\N
+rs409	RS409	room	RS	4	536	240	paf7	\N	\N	\N	\N	\N	\N
+rs420	RS420	room	RS	4	538	207	paf7	\N	\N	\N	\N	\N	\N
+paf7	RS Fourth Pathpoint 7	path	RS	4	536	221	paf6	paf8	rs420	rs409	\N	\N	\N
+rs408	RS408	room	RS	4	488	241	paf6	\N	\N	\N	\N	\N	\N
+rs420c	RS420C	room	RS	4	488	207	paf6	\N	\N	\N	\N	\N	\N
+paf6	RS Fourth Pathpoint 6	path	RS	4	488	221	paf5	paf7	rs420c	rs408	\N	\N	\N
+rs407	RS407	room	RS	4	434	241	paf5	\N	\N	\N	\N	\N	\N
+rs421	RS421	room	RS	4	410	207	paf5	\N	\N	\N	\N	\N	\N
+paf5	RS Fourth Pathpoint 5	path	RS	4	420	221	paf4	paf6	rs421	rs407	\N	\N	\N
+rs405	RS405	room	RS	4	324	240	paf4	\N	\N	\N	\N	\N	\N
+rs422	RS422	room	RS	4	313	208	paf4	\N	\N	\N	\N	\N	\N
+paf4	RS Fourth Pathpoint 4	path	RS	4	324	221	paf3	paf5	rs422	rs405	\N	\N	\N
+rs404	RS404	room	RS	4	275	240	paf3	\N	\N	\N	\N	\N	\N
+rs403	RS403	room	RS	4	227	241	paf3	\N	\N	\N	\N	\N	\N
+rs422a	RS422A	room	RS	4	226	207	paf3	\N	\N	\N	\N	\N	\N
+paf3	RS Fourth Pathpoint 3	path	RS	4	239	221	paf1	paf4	rs422a	rs403	rs404	\N	\N
+waf	RS Fourth Men's Bathroom	bathroom	RS	4	182	240	paf1	\N	\N	\N	\N	\N	\N
+elf1	RS Fourth Elevator	elevator	RS	4	134	180	paf2	elg1	els1	elt1	\N	\N	\N
+rs423	RS423	room	RS	4	162	171	paf2	\N	\N	\N	\N	\N	\N
+paf2	RS Fourth Pathpoint 2	path	RS	4	186	180	paf1	elf1	rs423	\N	\N	\N	\N
+paf1	RS Fourth Pathpoint 1	path	RS	4	182	217	stf1D	paf2	paf3	waf1	\N	\N	\N
+stf1D	RS Fourth Stair South Down	stair	RS	4	156	253	paf1	stt1U	\N	\N	\N	\N	\N
+\.
+
+
+-- Completed on 2018-12-01 18:34:42
+
+--
+-- PostgreSQL database dump complete
+--
+
